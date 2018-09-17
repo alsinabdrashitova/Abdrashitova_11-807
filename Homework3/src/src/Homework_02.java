@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Homework02 {
+public class Homework_02 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n=sc.nextInt();
@@ -13,7 +13,7 @@ public class Homework02 {
                 max = Math.abs(arr[i]);
                 k = i;
             }
-            }
-            System.out.print(k);
         }
+        System.out.print(k);
     }
+}
