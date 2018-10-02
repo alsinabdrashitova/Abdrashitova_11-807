@@ -13,7 +13,7 @@ public class D {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int n = recurs(33);
+        int n = recurs(16);
         {
             if (n == 1) {
                 System.out.println("YES");
