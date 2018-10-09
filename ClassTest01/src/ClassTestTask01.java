@@ -21,7 +21,7 @@ public class ClassTestTask01 {
         System.out.println(Arrays.toString(arr1));
     }
 
-    static int[] getSideDiagonalAsVector(int[][] matrix) {
+    public static int[] getSideDiagonalAsVector(int[][] matrix) {
         int[] arr = new int[matrix.length];
         for (int i = 0; i < matrix.length; i++) {
             arr[i] = matrix[i][matrix.length - i - 1];
@@ -29,7 +29,7 @@ public class ClassTestTask01 {
         return arr;
     }
 
-    static int[] mult(int[][] matrix, int[] arr) {
+    public static int[] mult(int[][] matrix, int[] arr) {
         int[] arr1 = new int[matrix.length];
         for (int i = 0; i < arr1.length; i++) {
             for (int j = 0; j < matrix[0].length; j++) {
@@ -39,7 +39,7 @@ public class ClassTestTask01 {
         return arr1;
     }
 
-    static void sortArr(int[] arr) {
+    public static void sortArr(int[] arr) {
         for (int i = arr.length - 1; i > 0; i--) {
             for (int j = 0; j < i; j++) {
                 if (Math.abs(arr[j]) < Math.abs(arr[j + 1])) {
