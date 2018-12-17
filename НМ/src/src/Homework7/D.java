@@ -1,3 +1,5 @@
+package Homework7;
+
 import java.util.Scanner;
 
 public class D {

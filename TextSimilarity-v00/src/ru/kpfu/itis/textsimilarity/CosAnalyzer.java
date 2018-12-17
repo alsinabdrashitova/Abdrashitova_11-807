@@ -15,14 +15,33 @@ public class CosAnalyzer implements TextAnalyzer {
     private List<String> tokenize(String text) {
         text = text.replace(".", "");
         String[] words = text.split(" ");
-        List<String> uniqueWords  = new ArrayList<>();
+        List<String> uniqueWords = new ArrayList<>();
         for (String word : words) {
             word = word.toLowerCase();
-            if (!uniqueWords.contains(word)){
-                uniqueWords.add(word);
+            uniqueWords.add(word); //поправил
+    }
+        return uniqueWords;
+
+    }
+
+
+    private double[] termFrequency(List<String> list2, List<String> list3) {
+        double[] count4 = new double[list3.size()];
+        for (String word : list2){
+            if (list3.contains(word)){
+                count4[list3.indexOf(word)]++;
             }
         }
-        return uniqueWords;
+
+        double count = 0;
+        for (double i : count4){
+            count += i * i;
+        }
+        count = Math.sqrt(count);
+        for (int i = 0; i < count4.length; i++) {
+            count4[i] = count4[i] /  count;
+        }
+        return count4;
     }
 
     private double cosSimilarity(List<String> list1, List<String> list2, List<String> list3 ) {
@@ -33,23 +52,5 @@ public class CosAnalyzer implements TextAnalyzer {
             count +=  count1[i] * count2[i];
         }
         return count;
-    }
-
-    private double[] termFrequency(List<String> list2, List<String> list3) {
-        double[] count4 = new double[list3.size()];
-        for (String word : list2){
-            if (list3.contains(word)){
-                count4[list3.indexOf(word)]++;
-            }
-        }
-        double count = 0;
-        for (double i : count4){
-            count += i * i;
-        }
-        count = Math.sqrt(count);
-        for (int i = 0; i < count4.length; i++) {
-            count4[i] = count4[i] /  count;
-        }
-        return count4;
     }
 }

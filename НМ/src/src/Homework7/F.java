@@ -1,6 +1,5 @@
-package src.Homework7;
+package Homework7;
 
-import java.util.Scanner;
 
 public class F{
         public static int recurs(int n) {
@@ -12,7 +11,6 @@ public class F{
             }
         }
         public static void main (String[]args){
-            Scanner sc = new Scanner(System.in);
             int n = recurs(336);
             System.out.println(n);
         }

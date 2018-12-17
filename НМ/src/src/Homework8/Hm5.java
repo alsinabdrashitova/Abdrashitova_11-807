@@ -1,29 +1,27 @@
-import java.util.Scanner;
+package Homework8;
 
 public class Hm5 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int m = n;
-    //    int sum = 0;
-        int[][] arr = new int[n][m];
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
-                arr[i][j] = sc.nextInt();
-                if ( i < j){
-         //           sum += arr[i][j];
+        int[][] arr = {{2, 33, 17}, {3, 2, 0}, {5, 7, 10}};
+        int[][] arr1 = {{3, 5, 10}, {0, 0, 2}, {3, 10, 15}};
+        int m = 3;
+        int n = 3;
+        int e = 3;
+        int[][] arr2 = new int[m][n];
+
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                for (int k = 0; k < e; k++) {
+                    arr2[i][j] += arr[i][k] * arr1[k][j];
                 }
             }
         }
-        System.out.println(mSum(arr));
-    }
-    public static int mSum( int arr[][]){
-        int sum = 0;
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = i + 1; j < arr[0].length; j++) {
-                sum += arr[i][j];
+        for (int i = 0; i < arr2.length; i++) {
+            for (int j = 0; j < arr2.length; j++) {
+                System.out.format("%4d", arr2[i][j]);
             }
+            System.out.println();
         }
-        return sum;
+
     }
 }
